@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <title>Document</title>
 </head>
 <body>
     <div class="wrapper">
-        <div class="main-container">
+        <div class="main-container">    
             <aside class="side-bar">
                 <div class="side-bar__logo">
                     <img src="./images/logo.png" alt="logo">
+                    <img src="./images/dollar.png" alt="">
                     <p>cloudcash</p>
                 </div>
                 <div class="side-bar__main">
@@ -20,48 +22,164 @@
                         <ul class="side-bar__list">
                             <li class="side-bar__link">
                                 <img src="./images/nav-icon1.png" alt="icon1">
-                                <p>Overview</p>
+                                <a class="side-bar__a" href="#">Overview</a>
                             </li>
                             <li class="side-bar__link">
                                 <img src="./images/nav-icon2.png" alt="icon2">
-                                <p>Transactions</p>
+                                <a class="side-bar__a" href="#">Transactions</a>
                             </li>
                             <li class="side-bar__link">
                                 <img src="./images/nav-icon3.png" alt="icon3">
-                                <p>Cards</p>
+                                <a class="side-bar__a" href="#">Cards</a>
                             </li>
                             <li class="side-bar__link">
                                 <img src="./images/nav-icon4.png" alt="icon4">
-                                <p>Invoices</p>
+                                <a class="side-bar__a" href="#">Invoices</a>
                             </li>
                             <li class="side-bar__link">
                                 <img src="./images/nav-icon5.png" alt="icon5">
-                                <p>Goals</p>
+                                <a class="side-bar__a" href="#">Cards</a>
                             </li>
                             <li class="side-bar__link">
                                 <img src="./images/nav-icon6.png" alt="icon6">
-                                <p>Settings</p>
+                                <a class="side-bar__a" href="#">Settings</a>
                             </li>
                         </ul>
                     </nav>
                     <div class="side-bar__bottom">
                         <img src="./images/side-bar-bottom.png" alt="">
-                        <p>Give your money awesome space in cloud</p>
+                        <p>Give your money <br> awesome space in cloud</p>
                         <button class="side-bar__button">Upgrade to premium 
                             <img src="./images/arrow-up.png" alt="arrow-up">
                         </button>
                     </div>
                 </div>
+                <hr>
             </aside>
             <main class="main">
                 <div class="main__top">
-                    <div class="main__text"></div>
-                    <div class="main__user"></div>
+                    <div class="main__text">
+                        <h1 class="main__title">Weekly sumup</h1>
+                        <p class="main__subtitle">Get summary of your weekly online transactions here.</p>
+                    </div>
+                    <div class="main__user">
+                        <img src="./images/letter.png" alt="icon">
+                        <img src="./images/bell.png" alt="icon">
+                        <div class="main__user-profile">
+                            <img src="./images/user.png" alt="icon">
+                            <div class="main__user-text">
+                                <p>Andrew</p>
+                                <p>Admin account</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="main__content">
                     <div class="main__left-content">
-                        <div class="main__cards"></div>
-                        <div class="main__history"></div>
+                        <div class="main__cards">
+                            <h2 class="main__cards-title">Cards</h2>
+                            <div class="main__cards-info">
+                                <div class="main__cards-card">
+                                    <div class="swiper main__cards-swiper">
+                                        <img src="./images/card.png" alt="card">
+                                      </div>
+                                    <div class="main__cards-limit">
+                                        <div class="main__cards-progress">
+                                            <div class="main__cards-progressin"></div>
+                                        </div>
+                                        <div class="main__cards-text">
+                                            <p>Weekly payment limit</p>
+                                            <p>$350.60 / $4000</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="main__cards-balance">
+                                    <div class="main__cards-current">
+                                        <p>$ 2850.75</p>
+                                        <p class="main__cards-p">Current balance</p>
+                                    </div>
+                                    <div class="main__cards-income">
+                                        <p>$ 1500.50</p>
+                                        <p class="main__cards-p">Income</p>
+                                    </div>
+                                    <div class="main__cards-outcome">
+                                        <p>$ 350.60</p>
+                                        <p class="main__cards-p">Outcome</p>
+                                    </div>
+                                    <div class="main__cards-switcher">
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="check"></span>
+                                        </label>
+                                        <p>Deactivate card</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main__history">
+                            <h2 class="main__history-title">
+                                Transaction history
+                            </h2>
+                            <div class="main__history-stats">
+                                <div class="main__history-titles">
+                                    <p class="main__history-reciever">Reciever</p>
+                                    <p class="main__history-type">Type</p>
+                                    <p class="main__history-date">Date</p>
+                                    <p class="main__history-amount">Amount</p>
+                                </div>
+
+                                <div class="main__history-titles">
+                                    <div class="main__history-reciever">
+                                        <img src="./images/t-basket.png" alt="basket">
+                                        <p>Tesco Market</p>
+                                    </div>
+                                    <p class="main__history-type">Shopping</p>
+                                    <p class="main__history-date">13 Dec 2020</p>
+                                    <p class="main__history-amount amount">$75.67</p>
+                                </div>
+
+                                <div class="main__history-titles">
+                                    <div class="main__history-reciever">
+                                        <img src="#" alt="truck">
+                                        <p>ElectroMen Market</p>
+                                    </div>
+                                    <p class="main__history-type">Shopping</p>
+                                    <p class="main__history-date">14 Dec 2020</p>
+                                    <p class="main__history-amount amount">$250.00</p>
+                                </div>
+
+                                <div class="main__history-titles">
+                                    <div class="main__history-reciever">
+                                        <img src="./images/t-feather.png" alt="t-feather">
+                                        <p>Fiorgio Restaurant</p>
+                                    </div>
+                                    <p class="main__history-type">Food</p>
+                                    <p class="main__history-date">07 Dec 2020</p>
+                                    <p class="main__history-amount amount">$19.50</p>
+                                </div>
+
+                                <div class="main__history-titles">
+                                    <div class="main__history-reciever">
+                                        <img src="./images/t-user.png" alt="user">
+                                        <p>John Mathew Kayne</p>
+                                    </div>
+                                    <p class="main__history-type">Type</p>
+                                    <p class="main__history-date">06 Dec 2020</p>
+                                    <p class="main__history-amount amount">$350</p>
+                                </div>
+
+                                <div class="main__history-titles">
+                                    <div class="main__history-reciever">
+                                        <img src="/images/t-user.png" alt="user">
+                                        <p>Ann Marlin</p>
+                                    </div>
+                                    <p class="main__history-type">Shopping</p>
+                                    <p class="main__history-date">31 Nov 2020</p>
+                                    <p class="main__history-amount amount">$430</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="main__right-content">
                         <div class="main__goals"></div>
@@ -72,5 +190,8 @@
             </main>
         </div>
     </div>
+
+    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 </body>
 </html>
