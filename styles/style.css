@@ -14,7 +14,7 @@
   margin: 0 auto;
 }
 
-.title, .main__outcome-title, .main__goals-title, .main__history-title, .main__cards-title {
+.title, .main__transaction-title, .main__outcome-title, .main__goals-title, .main__history-title, .main__cards-title {
   font-family: suprema;
   font-style: normal;
   font-weight: 600;
@@ -22,6 +22,19 @@
   line-height: 25px;
   color: #404040;
   padding-bottom: 10px;
+}
+
+.btn, .main__transaction-transfer button, .side-bar__button {
+  background: #ffc145;
+  border-radius: 13.617px;
+  padding: 1em;
+  border: none;
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.6965125rem;
+  line-height: 14px;
+  color: #404040;
 }
 
 .wrapper {
@@ -125,19 +138,6 @@
   text-align: center;
   color: #404040;
 }
-.side-bar__button {
-  background: #ffc145;
-  border-radius: 13.617px;
-  padding: 1em;
-  border: none;
-  font-family: "Quicksand";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 0.6965125rem;
-  line-height: 14px;
-  color: #404040;
-}
-
 .main {
   height: inherit;
   display: grid;
@@ -192,7 +192,7 @@
   color: #aeaeae;
 }
 .main__cards {
-  padding: 20px;
+  padding: 10px 15px;
   background: linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
   box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
   border-radius: 28px;
@@ -215,7 +215,7 @@
   margin-bottom: 15px;
 }
 .main__cards-progressin {
-  background-color: #197BBD;
+  background-color: #197bbd;
   border-radius: 10.7766px;
   width: 20%;
   height: 100%;
@@ -343,7 +343,7 @@
   background: #ffffff;
   box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
   border-radius: 19.0044px;
-  padding: 20px;
+  padding: 10px 15px;
   height: inherit;
 }
 .main__history-stats {
@@ -386,13 +386,14 @@
 }
 .main__right-content {
   min-height: 100%;
-  height: inherit;
+  height: 100%;
   display: grid;
-  grid-template-rows: 0.4fr 0.4fr 0.2fr;
-  row-gap: 40px;
+  grid-template-rows: 0.4fr 0.4fr 0.3fr;
+  grid-template-rows: 1fr;
+  row-gap: 30px;
 }
 .main__goals {
-  padding: 20px;
+  padding: 10px 15px;
   display: grid;
   grid-template-rows: 0.2fr 0.8fr;
 }
@@ -439,7 +440,7 @@
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 17px;
-  color: #AEAEAE;
+  color: #aeaeae;
 }
 .main__goals-name {
   font-family: suprema;
@@ -450,9 +451,12 @@
   color: #404040;
 }
 .main__outcome {
-  padding: 20px;
+  padding: 10px 15px;
   display: grid;
   grid-template-rows: 0.2fr 0.8fr;
+}
+.main__outcome-title {
+  align-self: center;
 }
 .main__outcome-shopping {
   display: grid;
@@ -474,7 +478,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #DDF9E4;
+  background: #ddf9e4;
   box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
   border-radius: 3px;
   width: 40px;
@@ -496,7 +500,7 @@
   align-items: center;
   -moz-column-gap: 10px;
        column-gap: 10px;
-  height: 90%;
+  height: 80%;
 }
 .main__outcome-progress p:nth-of-type(1) {
   font-family: suprema;
@@ -504,16 +508,17 @@
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 17px;
-  color: #AEAEAE;
+  color: #aeaeae;
   grid-row: 2/2;
 }
 .main__outcome-progressline {
-  background: #F1F1F1;
+  background: #f1f1f1;
   border-radius: 13.617px;
   height: 10px;
+  align-self: center;
 }
 .main__outcome-progressin {
-  background: linear-gradient(270deg, #FCAE73 0%, #F79042 99.18%);
+  background: linear-gradient(270deg, #fcae73 0%, #f79042 99.18%);
   border-radius: 10.7766px;
   height: 100%;
 }
@@ -525,4 +530,134 @@
 }
 .main__outcome-progressin.third {
   width: 74%;
+}
+.main__transaction {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding: 10px 15px;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+  background: #ffffff;
+  box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+  border-radius: 19.0044px;
+}
+.main__transaction-right {
+  height: 100%;
+  width: 100%;
+  background: #ED4C5C;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.05);
+  border-radius: 19.0044px;
+}
+.main__transaction-left {
+  display: grid;
+  grid-template-rows: 0.2fr 0.8fr;
+}
+.main__transaction-main {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 10px;
+}
+.main__transaction-users {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+.main__transaction-users div:nth-of-type(6) {
+  row-gap: 0 !important;
+}
+.main__transaction-users div:nth-of-type(6) img {
+  width: 30px;
+  height: 30px;
+}
+.main__transaction-user {
+  display: grid;
+  grid-template-rows: 0.8fr 0.2fr;
+  justify-content: space-between;
+  align-content: space-between;
+  justify-items: center;
+  align-items: center;
+  justify-self: start;
+  row-gap: 3px;
+}
+.main__transaction-user img {
+  justify-self: center;
+}
+.main__transaction-user p {
+  font-family: suprema;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 15px;
+  color: #404040;
+}
+.main__transaction-transfer input {
+  background: #ffffff;
+  border: 1px solid #197bbd;
+  border-radius: 8px;
+  height: 80%;
+  padding: 10px;
+}
+.main__transaction-transfer input::-moz-placeholder {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.49868125rem;
+  color: #c7c7c7;
+  vertical-align: middle;
+}
+.main__transaction-transfer input:-ms-input-placeholder {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.49868125rem;
+  color: #c7c7c7;
+  vertical-align: middle;
+}
+.main__transaction-transfer input::placeholder {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.49868125rem;
+  color: #c7c7c7;
+  vertical-align: middle;
+}
+.main__transaction-transfer button {
+  height: 80%;
+}
+.main__transaction-right {
+  display: flex;
+  padding: 10px;
+  align-items: end;
+  position: relative;
+  overflow: hidden;
+}
+.main__transaction-right p {
+  font-family: suprema;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.2569875rem;
+  line-height: 25px;
+  color: #FFFFFF;
+}
+.main__transaction-right img {
+  position: absolute;
+}
+.main__transaction-right img:nth-of-type(1) {
+  top: 5px;
+  left: -10px;
+  width: 80px;
+  height: 50px;
+}
+.main__transaction-right img:nth-of-type(2) {
+  top: 5px;
+  right: 70px;
+  width: 55px;
+  height: 40px;
+}
+.main__transaction-right img:nth-of-type(3) {
+  top: 50px;
+  right: 90px;
+}
+.main__transaction-right img:nth-of-type(4) {
+  top: 80px;
+  left: 20px;
 }/*# sourceMappingURL=style.css.map */
