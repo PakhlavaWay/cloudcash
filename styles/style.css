@@ -200,11 +200,11 @@
   box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
   border-radius: 28px;
   display: grid;
-  grid-template-rows: 0.1fr 0.9fr;
+  grid-template-rows: 0.1fr 1fr;
 }
 .main__cards-info {
   display: grid;
-  grid-template-columns: 2fr auto 1fr;
+  grid-template-columns: 1.7fr auto 1fr;
   -moz-column-gap: 0.6rem;
        column-gap: 0.6rem;
 }
@@ -226,6 +226,7 @@
 .main__cards-card {
   display: grid;
   align-self: center;
+  height: 100%;
 }
 .main__cards-progress {
   width: 100%;
@@ -272,7 +273,7 @@
   font-family: "Lato";
   font-style: normal;
   font-weight: 700;
-  font-size: 1.875rem;
+  font-size: 2.1875rem;
   line-height: 22px;
   color: #197bbd;
 }
@@ -280,7 +281,7 @@
   font-family: "Lato";
   font-style: normal;
   font-weight: 600;
-  font-size: 1.125rem;
+  font-size: 1.5rem;
   line-height: 22px;
   color: #439a86;
 }
@@ -416,7 +417,7 @@
 }
 .main__goals {
   display: grid;
-  grid-template-rows: 0.2fr 0.8fr;
+  grid-template-rows: 0.2fr auto;
 }
 .main__goals-top {
   display: grid;
@@ -434,8 +435,7 @@
   grid-template-columns: repeat(3, 1fr);
   -moz-column-gap: 15px;
        column-gap: 15px;
-  height: 100%;
-  min-height: 100%;
+  height: auto;
 }
 .main__goals-item {
   background: #ffffff;
@@ -681,9 +681,9 @@
 }
 .main__transaction-right img:nth-of-type(3) {
   top: 50px;
-  right: 90px;
+  left: 60px;
 }
 .main__transaction-right img:nth-of-type(4) {
-  top: 80px;
+  top: 70px;
   left: 20px;
 }/*# sourceMappingURL=style.css.map */

@@ -249,11 +249,11 @@ $yellow: #ffc145;
       0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
     border-radius: 28px;
     display: grid;
-    grid-template-rows: 0.1fr 0.9fr;
+    grid-template-rows: 0.1fr 1fr;
 
     &-info {
       display: grid;
-      grid-template-columns: 2fr auto 1fr;
+      grid-template-columns: 1.7fr auto 1fr;
       column-gap: 0.6rem;
 
       & hr {
@@ -279,6 +279,7 @@ $yellow: #ffc145;
     &-card {
       display: grid;
       align-self: center;
+      height: 100%
     }
 
     &-title {
@@ -335,7 +336,7 @@ $yellow: #ffc145;
       font-family: "Lato";
       font-style: normal;
       font-weight: 700;
-      @include pxToRem(30);
+      @include pxToRem(35);
       line-height: 22px;
       color: #197bbd;
     }
@@ -345,7 +346,7 @@ $yellow: #ffc145;
       font-family: "Lato";
       font-style: normal;
       font-weight: 600;
-      @include pxToRem(18);
+      @include pxToRem(24);
       line-height: 22px;
       color: #439a86;
     }
@@ -524,7 +525,7 @@ $yellow: #ffc145;
   &__goals {
     @extend .padding;
     display: grid;
-    grid-template-rows: 0.2fr 0.8fr;
+    grid-template-rows: 0.2fr auto;
 
     &-top {
       display: grid;
@@ -543,8 +544,8 @@ $yellow: #ffc145;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       column-gap: 15px;
-      height: 100%;
-      min-height: 100%;
+      height: auto;
+      // min-height: 100%;
     }
 
     &-item {
@@ -819,12 +820,12 @@ $yellow: #ffc145;
 
             &:nth-of-type(3) {
                 top: 50px;
-                right: 90px;
+                left: 60px;
 
             }
 
             &:nth-of-type(4) {
-                top: 80px;
+                top: 70px;
                 left: 20px;
 
             }
