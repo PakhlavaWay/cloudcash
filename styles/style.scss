@@ -36,7 +36,7 @@ $yellow: #ffc145;
   @include pxToRem(20.1118);
   line-height: 25px;
   color: #404040;
-  padding-bottom: 10px;
+  padding-bottom: 0.6rem;
 }
 
 .btn {
@@ -49,7 +49,7 @@ $yellow: #ffc145;
   font-style: normal;
   font-weight: 700;
   @include pxToRem(11.1442);
-  line-height: 14px;
+  line-height: 0.8rem;
   color: #404040;
 }
 //---------
@@ -77,6 +77,10 @@ $yellow: #ffc145;
     0px 0px 1px rgba(0, 0, 0, 0.04);
   border-radius: 59px;
   padding: 0 50px;
+}
+
+.padding {
+  padding: 0.6rem 0.9rem;
 }
 
 // ------------------------------------------------- side bar
@@ -135,7 +139,7 @@ $yellow: #ffc145;
     list-style-type: none;
     display: grid;
     grid-template-columns: 15% auto;
-    padding: 15px 0;
+    padding: 1rem 0;
     column-gap: 5px;
     & img {
       justify-self: center;
@@ -239,7 +243,7 @@ $yellow: #ffc145;
 
   // ------------------- cards
   &__cards {
-    padding: 10px 15px;
+    @extend .padding;
     background: linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
     box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06),
       0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
@@ -248,12 +252,26 @@ $yellow: #ffc145;
     &-info {
       display: grid;
       grid-template-columns: 2fr auto 1fr;
-      column-gap: 10px;
+      column-gap: 0.6rem;
 
       & hr {
         border: 1px solid #e8e8e8;
         height: 80%;
       }
+    }
+
+    &-swiper {
+      height: 200px;
+      width: 320px;
+
+      & img {
+        width: 100%;
+        height: 100%;
+      };
+    }
+
+    &-card {
+      display: grid
     }
 
     &-title {
@@ -264,7 +282,7 @@ $yellow: #ffc145;
       background: #f1f1f1;
       height: 10px;
       border-radius: 13.617px;
-      margin-bottom: 15px;
+      margin-bottom: 0.9rem;
     }
 
     &-progressin {
@@ -395,7 +413,7 @@ $yellow: #ffc145;
 
   &__left-content {
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto auto;
     min-height: 100%;
     row-gap: 20px;
     height: 100%;
@@ -420,24 +438,25 @@ $yellow: #ffc145;
     box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06),
       0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
     border-radius: 19.0044px;
-    padding: 10px 15px;
+    @extend .padding;
     height: inherit;
 
     &-stats {
       display: grid;
-      row-gap: 20px;
+      row-gap: 1.1rem;
       grid-template-rows: repeat(5, 1fr);
     }
 
     &-stats div:nth-of-type(1) {
       border-bottom: none;
+      padding-bottom: 0px;
     }
 
     &-titles {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       border-bottom: 0.5px solid #ececec;
-      padding-bottom: 13px;
+      padding-bottom: 0.8rem;
       align-items: center;
 
       & p {
@@ -493,7 +512,7 @@ $yellow: #ffc145;
   }
 
   &__goals {
-    padding: 10px 15px;
+    @extend .padding;
     display: grid;
     grid-template-rows: 0.2fr 0.8fr;
 
@@ -561,7 +580,7 @@ $yellow: #ffc145;
   }
 
   &__outcome {
-    padding: 10px 15px;
+    @extend .padding;
     display: grid;
     grid-template-rows: 0.2fr 0.8fr;
 
@@ -658,7 +677,7 @@ $yellow: #ffc145;
   &__transaction {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    padding: 10px 15px;
+    @extend .padding;
     column-gap: 15px;
     background: #ffffff;
     box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06),
@@ -727,12 +746,18 @@ $yellow: #ffc145;
     }
 
     &-transfer {
+      display: grid;
+      grid-template-columns: auto auto;
+      column-gap: 5px;
+      align-items: center;
+
       & input {
         background: #ffffff;
         border: 1px solid #197bbd;
         border-radius: 8px;
-        height: 80%;
-        padding: 10px;
+        height: 70%;
+        padding: 0.7em;
+        
 
         &::placeholder {
           font-family: "Lato";
@@ -746,7 +771,7 @@ $yellow: #ffc145;
 
       & button {
         @extend .btn;
-        height: 80%;
+        height: 70%;
       }
     }
 

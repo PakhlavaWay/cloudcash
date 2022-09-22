@@ -21,7 +21,7 @@
   font-size: 1.2569875rem;
   line-height: 25px;
   color: #404040;
-  padding-bottom: 10px;
+  padding-bottom: 0.6rem;
 }
 
 .btn, .main__transaction-transfer button, .side-bar__button {
@@ -33,7 +33,7 @@
   font-style: normal;
   font-weight: 700;
   font-size: 0.6965125rem;
-  line-height: 14px;
+  line-height: 0.8rem;
   color: #404040;
 }
 
@@ -53,6 +53,10 @@
   box-shadow: 0px 24px 32px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
   border-radius: 59px;
   padding: 0 50px;
+}
+
+.padding, .main__transaction, .main__outcome, .main__goals, .main__history, .main__cards {
+  padding: 0.6rem 0.9rem;
 }
 
 .side-bar {
@@ -106,7 +110,7 @@
   list-style-type: none;
   display: grid;
   grid-template-columns: 15% auto;
-  padding: 15px 0;
+  padding: 1rem 0;
   -moz-column-gap: 5px;
        column-gap: 5px;
 }
@@ -192,7 +196,6 @@
   color: #aeaeae;
 }
 .main__cards {
-  padding: 10px 15px;
   background: linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
   box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
   border-radius: 28px;
@@ -200,19 +203,30 @@
 .main__cards-info {
   display: grid;
   grid-template-columns: 2fr auto 1fr;
-  -moz-column-gap: 10px;
-       column-gap: 10px;
+  -moz-column-gap: 0.6rem;
+       column-gap: 0.6rem;
 }
 .main__cards-info hr {
   border: 1px solid #e8e8e8;
   height: 80%;
+}
+.main__cards-swiper {
+  height: 200px;
+  width: 320px;
+}
+.main__cards-swiper img {
+  width: 100%;
+  height: 100%;
+}
+.main__cards-card {
+  display: grid;
 }
 .main__cards-progress {
   width: 100%;
   background: #f1f1f1;
   height: 10px;
   border-radius: 13.617px;
-  margin-bottom: 15px;
+  margin-bottom: 0.9rem;
 }
 .main__cards-progressin {
   background-color: #197bbd;
@@ -326,7 +340,7 @@
 }
 .main__left-content {
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: auto auto;
   min-height: 100%;
   row-gap: 20px;
   height: 100%;
@@ -343,22 +357,22 @@
   background: #ffffff;
   box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
   border-radius: 19.0044px;
-  padding: 10px 15px;
   height: inherit;
 }
 .main__history-stats {
   display: grid;
-  row-gap: 20px;
+  row-gap: 1.1rem;
   grid-template-rows: repeat(5, 1fr);
 }
 .main__history-stats div:nth-of-type(1) {
   border-bottom: none;
+  padding-bottom: 0px;
 }
 .main__history-titles {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   border-bottom: 0.5px solid #ececec;
-  padding-bottom: 13px;
+  padding-bottom: 0.8rem;
   align-items: center;
 }
 .main__history .amount {
@@ -393,7 +407,6 @@
   row-gap: 30px;
 }
 .main__goals {
-  padding: 10px 15px;
   display: grid;
   grid-template-rows: 0.2fr 0.8fr;
 }
@@ -451,7 +464,6 @@
   color: #404040;
 }
 .main__outcome {
-  padding: 10px 15px;
   display: grid;
   grid-template-rows: 0.2fr 0.8fr;
 }
@@ -534,7 +546,6 @@
 .main__transaction {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  padding: 10px 15px;
   -moz-column-gap: 15px;
        column-gap: 15px;
   background: #ffffff;
@@ -589,12 +600,19 @@
   line-height: 15px;
   color: #404040;
 }
+.main__transaction-transfer {
+  display: grid;
+  grid-template-columns: auto auto;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+  align-items: center;
+}
 .main__transaction-transfer input {
   background: #ffffff;
   border: 1px solid #197bbd;
   border-radius: 8px;
-  height: 80%;
-  padding: 10px;
+  height: 70%;
+  padding: 0.7em;
 }
 .main__transaction-transfer input::-moz-placeholder {
   font-family: "Lato";
@@ -621,7 +639,7 @@
   vertical-align: middle;
 }
 .main__transaction-transfer button {
-  height: 80%;
+  height: 70%;
 }
 .main__transaction-right {
   display: flex;
