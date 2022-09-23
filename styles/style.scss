@@ -17,7 +17,7 @@
 
 // @include
 @mixin pxToRem($fontsize) {
-  font-size: $fontsize/16 * 1rem;
+  font-size: ($fontsize/16 * 1rem)-0.3rem;
 }
 
 // @extend
@@ -36,27 +36,30 @@ $yellow: #ffc145;
   @include pxToRem(20.1118);
   line-height: 25px;
   color: #404040;
-  padding-bottom: 0.6rem;
+  padding-bottom: 0.3rem;
 }
 
 .btn {
   background: #ffc145;
   border-radius: 13.617px;
-  padding: 1em;
+  padding: 0.8em;
   border: none;
-
   font-family: "Quicksand";
   font-style: normal;
   font-weight: 700;
-  @include pxToRem(11.1442);
+  @include pxToRem(12);
   line-height: 0.8rem;
   color: #404040;
+  
+  &:hover {
+    cursor: pointer;
+  }
 }
 //---------
 
 .wrapper {
   min-height: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
   width: 100%;
 }
 
@@ -66,21 +69,15 @@ $yellow: #ffc145;
   grid-template-columns: 0.2fr 1.8fr;
   column-gap: 30px;
   height: 100vh;
-  background: linear-gradient(
-    121.32deg,
-    #ffffff 10.96%,
-    #ffffff 72%,
-    #ffffff 99.98%
-  );
-  box-shadow: 0px 24px 32px rgba(0, 0, 0, 0.04),
-    0px 16px 24px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04),
+  background: linear-gradient(121.32deg, #ffffff 10.96%, #ffffff 72%, #ffffff 99.98%);
+  box-shadow: 0px 24px 32px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04),
     0px 0px 1px rgba(0, 0, 0, 0.04);
   border-radius: 59px;
   padding: 0 50px;
 }
 
 .padding {
-  padding: 0.6rem 0.9rem;
+  padding: 0.4rem 0.7rem;
 }
 
 // ------------------------------------------------- side bar
@@ -89,9 +86,10 @@ $yellow: #ffc145;
   height: inherit;
 
   display: grid;
-  grid-template-rows: 15% 85%;
+  grid-template-rows: 10% 90%;
   grid-template-columns: 96% 2%;
-  padding-bottom: 50px;
+  row-gap: 10px;
+  padding-bottom: 30px;
 
   &__logo {
     grid-row: 1/2;
@@ -139,7 +137,7 @@ $yellow: #ffc145;
     list-style-type: none;
     display: grid;
     grid-template-columns: 15% auto;
-    padding: 1rem 0;
+    padding: 0.7rem 0;
     column-gap: 5px;
     & img {
       justify-self: center;
@@ -160,13 +158,14 @@ $yellow: #ffc145;
     justify-self: start;
     display: grid;
     justify-items: center;
-    row-gap: 15px;
+    row-gap: 5px;
+    height: auto;
 
     & p {
       font-family: suprema;
       font-style: normal;
       font-weight: 400;
-      @include pxToRem(8.7511);
+      @include pxToRem(10.7511);
       line-height: 11px;
       text-align: center;
       color: #404040;
@@ -175,6 +174,17 @@ $yellow: #ffc145;
 
   &__button {
     @extend .btn;
+    display: grid;
+    grid-template-columns: 1fr 0.2fr;
+    column-gap: 5px;
+    align-items: center;
+    padding: 1.5em;
+  
+    
+    
+    & img {
+      align-self: center;
+    }
   }
 }
 
@@ -184,7 +194,8 @@ $yellow: #ffc145;
 .main {
   height: inherit;
   display: grid;
-  grid-template-rows: 15% 85%;
+  grid-template-rows: 10% 90%;
+  row-gap: 10px;
 
   &__top {
     display: grid;
@@ -196,8 +207,8 @@ $yellow: #ffc145;
     font-family: suprema;
     font-style: normal;
     font-weight: 600;
-    @include pxToRem(43.3726);
-    line-height: 53px;
+    @include pxToRem(30.3726);
+    line-height: 40px;
     color: #404040;
   }
 
@@ -205,8 +216,9 @@ $yellow: #ffc145;
     font-family: suprema;
     font-style: normal;
     font-weight: 400;
-    @include pxToRem(16.0564);
+    @include pxToRem(14.0564);
     color: #aeaeae;
+    padding-bottom: 5px;
   }
 
   &__user {
@@ -216,12 +228,26 @@ $yellow: #ffc145;
     align-items: center;
     justify-self: end;
 
+    & img {
+      width: 18px;
+      height: 14px;
+    }
+
+    & img:nth-of-type(2) {
+      width: 18.5px;
+      height: 18.5px;
+    }
+
     &-profile {
       display: grid;
       grid-template-columns: 1fr 2fr;
+      column-gap: 5px;
+      align-items: center;
       & img {
         background-color: $yellow;
         border-radius: 20px;
+        width: 30px;
+        height: 30px;
       }
     }
 
@@ -231,7 +257,7 @@ $yellow: #ffc145;
       font-style: normal;
       font-weight: 600;
       @include pxToRem(14);
-      line-height: 17px;
+      line-height: 12px;
       color: #404040;
     }
 
@@ -245,20 +271,24 @@ $yellow: #ffc145;
   &__cards {
     @extend .padding;
     background: linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
-    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06),
-      0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
     border-radius: 28px;
     display: grid;
     grid-template-rows: 0.1fr 1fr;
+    height: 100%;
 
     &-info {
       display: grid;
       grid-template-columns: 1.7fr auto 1fr;
-      column-gap: 0.6rem;
+      column-gap: 20px;
+      height: 100%;
+      
 
       & hr {
         border: 1px solid #e8e8e8;
-        height: 80%;
+        background-color: #e8e8e8;
+        height: 75%;
+        width: 100%;
       }
     }
 
@@ -267,19 +297,96 @@ $yellow: #ffc145;
     }
 
     &-swiper {
-      height: 200px;
-      width: 320px;
+      background: linear-gradient(180deg, #197bbd 0%, #3391d0 100%);
+      border-radius: 26px;
+      display: grid;
+      // grid-template-columns: 0.1fr 0.8fr 0.1fr;
+      align-items: center;
+      padding: 10px;
+      height: 110%;
+      width: 90%;
+      justify-self: center;
+      position: relative;
+    }
 
-      & img {
-        width: 100%;
-        height: 100%;
-      };
+    &-left {
+      position: absolute;
+      left: -20px;
+    }
+
+    &-main {
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      align-items: center;
+      height: 100%;
+    }
+
+    &-right {
+      position: absolute;
+      right: -20px;
+    }
+
+    &-left,
+    &-right {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &-type {
+      & p:nth-of-type(1) {
+        font-family: "Quicksand";
+        font-style: normal;
+        font-weight: 700;
+        @include pxToRem(16);
+        color: #ffffff;
+      }
+
+      & p:nth-of-type(2) {
+        font-family: "Lato";
+        font-style: normal;
+        font-weight: 700;
+        @include pxToRem(14);
+        color: rgba(255, 255, 255, 0.39);
+      }
+    }
+
+    &-number {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      font-family: "Quicksand";
+      font-style: normal;
+      font-weight: 500;
+      @include pxToRem(21);
+      color: #ffffff;
+    }
+
+    &-expire {
+      display: grid;
+      grid-template-columns: 0.5fr 1fr;
+
+      & div p:nth-of-type(1) {
+        font-family: "Lato";
+        font-style: normal;
+        font-weight: 500;
+        @include pxToRem(13);
+        color: #ffffff;
+      }
+
+      & div p:nth-of-type(2) {
+        font-family: "Lato";
+        font-style: normal;
+        font-weight: 500;
+        @include pxToRem(16);
+        color: #ffffff;
+      }
     }
 
     &-card {
       display: grid;
       align-self: center;
-      height: 100%
+      height: 100%;
     }
 
     &-title {
@@ -290,7 +397,7 @@ $yellow: #ffc145;
       background: #f1f1f1;
       height: 10px;
       border-radius: 13.617px;
-      margin-bottom: 0.9rem;
+      margin-bottom: 0.2rem;
     }
 
     &-progressin {
@@ -316,7 +423,7 @@ $yellow: #ffc145;
         font-family: suprema;
         font-style: normal;
         font-weight: 400;
-        @include pxToRem(14);
+        @include pxToRem(12);
         line-height: 17px;
         color: #aeaeae;
       }
@@ -336,7 +443,7 @@ $yellow: #ffc145;
       font-family: "Lato";
       font-style: normal;
       font-weight: 700;
-      @include pxToRem(35);
+      @include pxToRem(32);
       line-height: 22px;
       color: #197bbd;
     }
@@ -346,7 +453,7 @@ $yellow: #ffc145;
       font-family: "Lato";
       font-style: normal;
       font-weight: 600;
-      @include pxToRem(24);
+      @include pxToRem(22);
       line-height: 22px;
       color: #439a86;
     }
@@ -355,10 +462,10 @@ $yellow: #ffc145;
       font-family: suprema;
       font-style: normal;
       font-weight: 400;
-      @include pxToRem(14);
+      @include pxToRem(16);
       line-height: 17px;
       color: #aeaeae;
-      padding-top: 7px;
+      // padding-top: 7px;
     }
 
     input[type="checkbox"] {
@@ -409,14 +516,13 @@ $yellow: #ffc145;
       transform: translateX(120%);
     }
   }
-
   &__content {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
-    column-gap: 20px;
+    column-gap: 10px;
     min-height: 100%;
     height: 100%;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
   }
 
   &__left-content {
@@ -424,8 +530,9 @@ $yellow: #ffc145;
     grid-template-rows: auto auto;
     // min-height: 100%;
     max-height: 100%;
-    row-gap: 20px;
+    row-gap: 15px;
     height: 100%;
+    // align-content: space-between;
   }
 
   // ------------------------ transactions history
@@ -444,8 +551,7 @@ $yellow: #ffc145;
 
   &__history {
     background: #ffffff;
-    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06),
-      0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
     border-radius: 19.0044px;
     @extend .padding;
     height: inherit;
@@ -454,20 +560,22 @@ $yellow: #ffc145;
 
     &-stats {
       display: grid;
-      row-gap: 1.1rem;
+      row-gap: 0.6rem;
       grid-template-rows: repeat(5, 1fr);
     }
 
     &-stats div:nth-of-type(1) {
       border-bottom: none;
       padding-bottom: 0px;
+      align-self: end;
     }
 
     &-titles {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: 1.3fr 1fr 1fr 0.8fr;
+      column-gap: 10px;
       border-bottom: 0.5px solid #ececec;
-      padding-bottom: 0.8rem;
+      padding-bottom: 0.3rem;
       align-items: center;
 
       & p {
@@ -488,6 +596,8 @@ $yellow: #ffc145;
     &-reciever {
       display: grid;
       grid-template-columns: 0.2fr 1fr;
+      column-gap: 5px;
+      align-items: center;
 
       & p {
         @extend .for-transactions;
@@ -516,10 +626,9 @@ $yellow: #ffc145;
     min-height: 100%;
     height: 100%;
     display: grid;
-    grid-template-rows: 0.4fr 0.4fr 0.3fr;
-    grid-template-rows: 1fr;
-    row-gap: 1.5rem;
-
+    grid-template-rows: 0.4fr 0.4fr 0.2fr;
+    align-content: space-between;
+    row-gap: 15px;
   }
 
   &__goals {
@@ -542,31 +651,38 @@ $yellow: #ffc145;
 
     &-items {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      column-gap: 15px;
+      grid-template-columns: repeat(3, 1fr) 0.25fr;
+      column-gap: 10px;
       height: auto;
-      // min-height: 100%;
+      align-items: center;
     }
 
     &-item {
       background: #ffffff;
-      box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06),
-        0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+      box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
       border-radius: 28px;
       padding-left: 20px;
-
       display: grid;
       grid-template-rows: 1fr 1fr;
-      align-content: space-between;
+      // align-content: space-between;
       align-items: center;
+      row-gap: 15px;
+      height: 100%;
+      padding: 10px;
+    }
+    
+    &-arrow {
+      align-self: center;
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     &-price {
       font-family: "Lato";
       font-style: normal;
       font-weight: 600;
-      @include pxToRem(23.9789);
-      line-height: 29px;
+      @include pxToRem(19);
       color: #696969;
     }
 
@@ -583,8 +699,7 @@ $yellow: #ffc145;
       font-family: suprema;
       font-style: normal;
       font-weight: 400;
-      @include pxToRem(20.1118);
-      line-height: 25px;
+      @include pxToRem(17);
       color: #404040;
     }
   }
@@ -609,35 +724,37 @@ $yellow: #ffc145;
         font-family: "Lato";
         font-style: normal;
         font-weight: 600;
-        @include pxToRem(23.9789);
-        line-height: 29px;
+        @include pxToRem(20);
+        // line-height: 29px;
         color: #696969;
         align-self: start;
       }
     }
-
+  
+    
     &-image {
       display: flex;
       align-items: center;
       justify-content: center;
       background: #ddf9e4;
-      box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06),
-        0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+      box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
       border-radius: 3px;
-      width: 40px;
-      height: 40px;
+      width: 25px;
+      height: 25px;
 
       & img {
         width: 16px;
         height: 16px;
       }
     }
+    
 
     &-items {
       display: grid;
       grid-template-rows: 1fr 1fr 1fr;
       align-items: center;
     }
+  
 
     &-progress {
       display: grid;
@@ -690,8 +807,7 @@ $yellow: #ffc145;
     @extend .padding;
     column-gap: 15px;
     background: #ffffff;
-    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06),
-      0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
     border-radius: 19.0044px;
 
     &-title {
@@ -701,7 +817,7 @@ $yellow: #ffc145;
     &-right {
       height: 100%;
       width: 100%;
-      background: #ED4C5C;
+      background: #ed4c5c;
       box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.05);
       border-radius: 19.0044px;
     }
@@ -713,8 +829,8 @@ $yellow: #ffc145;
 
     &-main {
       display: grid;
-      grid-template-rows: 1fr 1fr;
-      row-gap: 10px;
+      grid-template-rows: 1.4fr 1fr;
+      row-gap: 5px;
     }
 
     &-users {
@@ -749,87 +865,94 @@ $yellow: #ffc145;
         font-family: suprema;
         font-style: normal;
         font-weight: 400;
-        @include pxToRem(12);
-        line-height: 15px;
+        @include pxToRem(14);
+        // line-height: 15px;
         color: #404040;
       }
     }
 
     &-transfer {
       display: grid;
-      grid-template-columns: auto auto;
+      grid-template-columns: 1fr 0.7fr;
       column-gap: 5px;
-      align-items: center;
+      align-items: end;
 
       & input {
         background: #ffffff;
         border: 1px solid #197bbd;
         border-radius: 8px;
-        height: 70%;
+        height: 90%;
         padding: 0.7em;
-        
+        width: 100%;
 
         &::placeholder {
           font-family: "Lato";
           font-style: normal;
           font-weight: 300;
-          @include pxToRem(23.9789);
+          @include pxToRem(20.9789);
           color: #c7c7c7;
           vertical-align: middle;
+          
         }
       }
 
       & button {
         @extend .btn;
-        height: 70%;
+        height: 90%;
+        display: grid;
+        grid-template-columns: 1fr 0.2fr;
+        align-items: center;
+        
+        & img {
+          width: 7px;
+          height: 7px;
+        }
       }
     }
 
     &-right {
-        display: flex;
-        padding: 10px;
-        align-items: end;
-        position: relative;
-        overflow: hidden;
+      display: flex;
+      padding: 10px;
+      align-items: end;
+      position: relative;
+      overflow: hidden;
 
-        & p {
-            font-family: suprema;
-            font-style: normal;
-            font-weight: 600;
-            @include pxToRem(20.1118);
-            line-height: 25px;
-            color: #FFFFFF;            
+      & p {
+        font-family: suprema;
+        font-style: normal;
+        font-weight: 600;
+        @include pxToRem(19);
+        // line-height: 25px;
+        color: #ffffff;
+      }
+
+      & img {
+        position: absolute;
+
+        &:nth-of-type(1) {
+          top: 5px;
+          left: -10px;
+          width: 80px;
+          height: 50px;
         }
 
-        & img {
-            position: absolute;
-
-            &:nth-of-type(1) {
-                top: 5px;
-                left: -10px;
-                width: 80px;
-                height: 50px;
-            }
-
-            &:nth-of-type(2) {
-                top: 5px;
-                right: 70px;
-                width: 55px;
-                height: 40px;
-            }
-
-            &:nth-of-type(3) {
-                top: 50px;
-                left: 60px;
-
-            }
-
-            &:nth-of-type(4) {
-                top: 70px;
-                left: 20px;
-
-            }
+        &:nth-of-type(2) {
+          top: 5px;
+          right: 70px;
+          width: 55px;
+          height: 40px;
         }
+
+        &:nth-of-type(3) {
+          top: 50px;
+          left: 60px;
+        }
+
+        &:nth-of-type(4) {
+          top: 70px;
+          left: 20px;
+        }
+      }
     }
   }
 }
