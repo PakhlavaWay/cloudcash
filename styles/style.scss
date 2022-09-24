@@ -931,19 +931,8 @@ $yellow: #ffc145;
           color: #c7c7c7;
           vertical-align: middle; 
         }
-        
-        &::after {
-          content: "$";
-          position: absolute;
-          display: inline-block;
-          right: 20px;
-          top: 10px;
-          z-index: 99;
-          width: 100%;
-          height: 100%;
-        }
       }
-
+      
       & button {
         @extend .btn;
         height: 90%;
@@ -958,6 +947,19 @@ $yellow: #ffc145;
           height: 7px;
           justify-self: end;
         }
+      }
+    }
+    
+    &-input {
+      position: relative;
+      
+      &::after {
+        content: "$";
+        position: absolute;
+        display: inline-block;
+        right: 10px;
+        top: 8px;
+        color: #C7C7C7;
       }
     }
 
@@ -989,7 +991,7 @@ $yellow: #ffc145;
 
         &:nth-of-type(2) {
           top: 5px;
-          right: 20px;
+          right: 10px;
           width: 55px;
           height: 40px;
         }
