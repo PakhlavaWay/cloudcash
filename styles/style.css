@@ -27,13 +27,12 @@
 .btn, .main__transaction-transfer button, .side-bar__button {
   background: #ffc145;
   border-radius: 13.617px;
-  padding: 0.8em;
+  padding: 0.2rem 0.4rem;
   border: none;
   font-family: "Quicksand";
   font-style: normal;
   font-weight: 700;
-  font-size: 0.45rem;
-  line-height: 0.8rem;
+  font-size: 0.5125rem;
   color: #404040;
 }
 .btn:hover, .main__transaction-transfer button:hover, .side-bar__button:hover {
@@ -55,10 +54,10 @@
   background: linear-gradient(121.32deg, #ffffff 10.96%, #ffffff 72%, #ffffff 99.98%);
   box-shadow: 0px 24px 32px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
   border-radius: 59px;
-  padding: 0 50px;
+  padding: 0 40px;
 }
 
-.padding, .main__transaction, .main__outcome, .main__goals, .main__history, .main__cards {
+.padding, .main__transaction-left, .main__outcome, .main__goals, .main__history, .main__cards {
   padding: 0.4rem 0.7rem;
 }
 
@@ -69,6 +68,7 @@
   grid-template-columns: 96% 2%;
   row-gap: 10px;
   padding-bottom: 30px;
+  justify-items: center;
 }
 .side-bar__logo {
   grid-row: 1/2;
@@ -114,9 +114,10 @@
   list-style-type: none;
   display: grid;
   grid-template-columns: 15% auto;
-  padding: 0.7rem 0;
+  padding: 0.5rem 0;
   -moz-column-gap: 5px;
        column-gap: 5px;
+  padding-left: 10px;
 }
 .side-bar__link img {
   justify-self: center;
@@ -129,6 +130,10 @@
   line-height: 17px;
   color: #197bbd;
   text-decoration: none;
+}
+.side-bar__link.one {
+  background: #F0F7FF;
+  border-radius: 4px;
 }
 .side-bar__bottom {
   align-self: end;
@@ -148,15 +153,18 @@
   color: #404040;
 }
 .side-bar__button {
+  font-size: 0.48125rem;
   display: grid;
   grid-template-columns: 1fr 0.2fr;
   -moz-column-gap: 5px;
        column-gap: 5px;
   align-items: center;
-  padding: 1.5em;
+  padding: 0.8rem 0.6rem;
+  height: 100%;
 }
 .side-bar__button img {
   align-self: center;
+  justify-self: end;
 }
 
 .main {
@@ -196,6 +204,9 @@
 .main__user img {
   width: 18px;
   height: 14px;
+}
+.main__user img:hover {
+  cursor: pointer;
 }
 .main__user img:nth-of-type(2) {
   width: 18.5px;
@@ -440,6 +451,7 @@
   min-height: 100%;
   height: 100%;
   padding-bottom: 30px;
+  position: relative;
 }
 .main__left-content {
   display: grid;
@@ -460,7 +472,7 @@
   background: #ffffff;
   box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
   border-radius: 19.0044px;
-  height: inherit;
+  height: auto;
   display: grid;
   grid-template-rows: 0.1fr 0.9fr;
 }
@@ -468,6 +480,7 @@
   display: grid;
   row-gap: 0.6rem;
   grid-template-rows: repeat(5, 1fr);
+  align-items: center;
 }
 .main__history-stats div:nth-of-type(1) {
   border-bottom: none;
@@ -510,7 +523,7 @@
   height: 10px;
 }
 .main__right-content {
-  min-height: 100%;
+  max-height: 100%;
   height: 100%;
   display: grid;
   grid-template-rows: 0.4fr 0.4fr 0.2fr;
@@ -534,11 +547,15 @@
 }
 .main__goals-items {
   display: grid;
-  grid-template-columns: repeat(3, 1fr) 0.25fr;
+  grid-template-columns: repeat(3, 1fr);
   -moz-column-gap: 10px;
        column-gap: 10px;
   height: auto;
   align-items: center;
+}
+.main__goals-arrow {
+  position: absolute;
+  right: -15px;
 }
 .main__goals-item {
   background: #ffffff;
@@ -616,10 +633,20 @@
   width: 16px;
   height: 16px;
 }
+.main__outcome .image-one {
+  background: #FFEADA;
+}
+.main__outcome .image-two {
+  background: #DDF9E4;
+}
+.main__outcome .image-three {
+  background: #E4F0FF;
+}
 .main__outcome-items {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   align-items: center;
+  height: auto;
 }
 .main__outcome-progress {
   display: grid;
@@ -661,12 +688,9 @@
 }
 .main__transaction {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  -moz-column-gap: 15px;
-       column-gap: 15px;
-  background: #ffffff;
-  box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
-  border-radius: 19.0044px;
+  grid-template-columns: 2.7fr 1fr;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
 }
 .main__transaction-right {
   height: 100%;
@@ -678,6 +702,9 @@
 .main__transaction-left {
   display: grid;
   grid-template-rows: 0.2fr 0.8fr;
+  background: #ffffff;
+  box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+  border-radius: 19.0044px;
 }
 .main__transaction-main {
   display: grid;
@@ -687,13 +714,16 @@
 .main__transaction-users {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
+  -moz-column-gap: 5px;
+       column-gap: 5px;
 }
 .main__transaction-users div:nth-of-type(6) {
   row-gap: 0 !important;
 }
 .main__transaction-users div:nth-of-type(6) img {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
+  align-self: center;
 }
 .main__transaction-user {
   display: grid;
@@ -702,7 +732,7 @@
   align-content: space-between;
   justify-items: center;
   align-items: center;
-  justify-self: start;
+  justify-self: center;
   row-gap: 3px;
 }
 .main__transaction-user img {
@@ -712,7 +742,7 @@
   font-family: suprema;
   font-style: normal;
   font-weight: 400;
-  font-size: 0.575rem;
+  font-size: 0.5125rem;
   color: #404040;
 }
 .main__transaction-transfer {
@@ -721,6 +751,7 @@
   -moz-column-gap: 5px;
        column-gap: 5px;
   align-items: end;
+  width: 100%;
 }
 .main__transaction-transfer input {
   background: #ffffff;
@@ -729,6 +760,7 @@
   height: 90%;
   padding: 0.7em;
   width: 100%;
+  position: relative;
 }
 .main__transaction-transfer input::-moz-placeholder {
   font-family: "Lato";
@@ -754,15 +786,27 @@
   color: #c7c7c7;
   vertical-align: middle;
 }
+.main__transaction-transfer input::after {
+  content: "$";
+  position: absolute;
+  display: inline-block;
+  right: 20px;
+  top: 10px;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+}
 .main__transaction-transfer button {
   height: 90%;
   display: grid;
   grid-template-columns: 1fr 0.2fr;
   align-items: center;
+  width: 100%;
 }
 .main__transaction-transfer button img {
   width: 7px;
   height: 7px;
+  justify-self: end;
 }
 .main__transaction-right {
   display: flex;
@@ -789,15 +833,15 @@
 }
 .main__transaction-right img:nth-of-type(2) {
   top: 5px;
-  right: 70px;
+  right: 20px;
   width: 55px;
   height: 40px;
 }
 .main__transaction-right img:nth-of-type(3) {
-  top: 50px;
+  top: 35px;
   left: 60px;
 }
 .main__transaction-right img:nth-of-type(4) {
-  top: 70px;
+  top: 50px;
   left: 20px;
 }/*# sourceMappingURL=style.css.map */
