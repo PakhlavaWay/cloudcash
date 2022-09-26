@@ -12,7 +12,7 @@
 
 @font-face {
   font-family: suprema;
-  src: url(../suprema/Suprema\ Bold.ttf), url(../suprema/Suprema\ Regular.ttf);
+  src: url(../fonts/suprema/Suprema\ Bold.ttf), url(../fonts/suprema/Suprema\ Regular.ttf);
 }
 
 // @include
@@ -138,10 +138,16 @@ $yellow: #ffc145;
     display: grid;
     grid-template-columns: 15% auto;
     padding: 0.5rem 0;
-    column-gap: 5px;
+    column-gap: 6px;
     padding-left: 10px;
+    border-radius: 4px;
     & img {
       justify-self: center;
+      color: #3391d0;
+      &:hover {
+        cursor: pointer;
+        color: #197bbd;
+      }
     }
     & a {
       justify-self: start;
@@ -149,13 +155,16 @@ $yellow: #ffc145;
       font-weight: 700;
       @include pxToRem(14);
       line-height: 17px;
-      color: #197bbd;
+      color: #C7C7C7;
       text-decoration: none;
+      
+      &:hover {
+        color: #197bbd;
+      }
     }
     
-    &.one {
+    &:hover {
       background: #F0F7FF;
-      border-radius: 4px;
     }
   }
 
